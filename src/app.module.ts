@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MoviesModule } from './movies/movies.module';
 import * as dotenv from 'dotenv';
+import { Movie } from './movies/entities/movie.entity'; // Movie 엔티티 경로 추가
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ dotenv.config();
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [],
+      entities: [Movie],
       synchronize: true,
     }),
   ],
