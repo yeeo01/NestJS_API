@@ -20,10 +20,4 @@ dotenv.config();
     }),
   ],
 })
-export class AppModule {
-  constructor() {
-    console.log('DB_HOST:', process.env.DB_HOST);
-    console.log('DB_PORT:', process.env.DB_PORT);
-    // 이와 같이 필요한 환경 변수들을 출력할 수 있습니다.
-  }
-}
+export class AppModule {}
