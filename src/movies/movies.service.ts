@@ -27,9 +27,9 @@ export class MoviesService {
   }
 
   // 삭제
-  async deleteOne(id: number): Promise<void> {
+  async softDelete(id: number): Promise<void> {
     const movie = await this.getOne(id);
-    await this.movieRepository.delete(movie.id); // 해당 영화 삭제
+    await this.movieRepository.softDelete(movie.id); // 해당 영화 삭제
   }
 
   // 생성

@@ -1,4 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  DeleteDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Movie {
@@ -13,4 +18,7 @@ export class Movie {
 
   @Column('simple-array')
   genres: string[];
+
+  @DeleteDateColumn() // Soft delete
+  deletedAt: Date;
 }
